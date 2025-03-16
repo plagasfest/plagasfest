@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plagas Fest</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            background: linear-gradient(135deg, #000f0d, #002925, #00443d);
+            color: #d1f4f1;
+            position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        #dynamic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.9) 20%, transparent 80%);
+            animation: backgroundShift 15s infinite alternate;
+        }
+        @keyframes backgroundShift {
+            0% { background-position: 0% 0%; opacity: 0.8; }
+            50% { background-position: 50% 50%; opacity: 0.6; }
+            100% { background-position: 100% 100%; opacity: 0.8; }
+        }
+        h1 {
+            color: #00ffcc;
+            font-size: 4.5em;
+            margin-top: 40px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #00ffcc, #007a66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #007a66, 0 0 40px #004d40;
+            animation: pulseGlow 2.5s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% { text-shadow: 0 0 15px #00ffcc, 0 0 30px #007a66; }
+            100% { text-shadow: 0 0 30px #00ffcc, 0 0 60px #007a66; }
+        }
+        p {
+            font-size: 1.5em;
+            color: #00d8a2;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #004d40;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+        .row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 1), 0 0 20px #00d8a2;
+            backdrop-filter: blur(10px);
+            border: 2px solid #00d8a2;
+            transition: transform 0.2s;
+        }
+        .row:hover {
+            transform: scale(1.05);
+        }
+        h3 {
+            color: #00ffcc;
+            font-size: 1.8em;
+            margin: 0;
+            text-shadow: 0 0 10px #00d8a2;
+        }
+        .box {
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            min-width: 350px;
+            text-align: center;
+            user-select: all;
+            background: rgba(0, 0, 0, 0.9);
+            color: #d1f4f1;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px #00ffcc;
+        }
+        .copy-btn {
+            margin: 20px 5px;
+            padding: 12px 20px;
+            cursor: pointer;
+            background: #00d8a2;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.3s;
+        }
+        .copy-btn:hover {
+            background: #007a66;
+            color: #fff;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div id="dynamic-bg"></div>
+    <h1 id="main-title">PLAGAS FEST 2025</h1>
+    <p>DATOS DE CUENTA BANCARIA</p>
+
+    <div class="container">
+        <div class="row">
+            <h3 id="title1">Alias  Nº de Teléfono</h3>
+            <div class="box" id="text1">+595981136289</div>
+            <button class="copy-btn" onclick="copyText('text1')">Copiar</button>
+        </div>
+        <div class="row">
+            <h3 id="title2">Titular</h3>
+            <div class="box" id="text2">GLADYS PATRICIA MORENO </div>
+            <button class="copy-btn" onclick="copyText('text2')">Copiar</button>
+        </div>
+        <div class="row">
+            <h3 id="title3">Banco</h3>
+            <div class="box" id="text3">Familiar</div>
+            <button class="copy-btn" onclick="copyText('text3')">Copiar</button>
+        </div>
+        <div class="row">
+            <h3 id="title4">Nº de Cédula</h3>
+            <div class="box" id="text4">4472315</div>
+            <button class="copy-btn" onclick="copyText('text4')">Copiar</button>
+        </div>
+        <div class="row">
+            <h3 id="title5">N° de cuenta para transferencias Banco Familiar</h3>
+            <div class="box" id="text5">81-13059381</div>
+            <button class="copy-btn" onclick="copyText('text5')">Copiar</button>
+        </div>
+        <div class="row">
+            <h3 id="title6">N° de cuenta para transferencias Otros Bancos</h3>
+            <div class="box" id="text6">8113059381</div>
+            <button class="copy-btn" onclick="copyText('text6')">Copiar</button>
+        </div>
+    </div>
+
+    <script>
+        function copyText(elementId) {
+            let text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Texto copiado: " + text);
+            });
+        }
+        particlesJS("particles-js", {
+            "particles": { "number": { "value": 150 }, "color": { "value": ["#00ffcc", "#00d8a2", "#004d40", "#00110f"] }, "shape": { "type": "circle" }, "opacity": { "value": 0.7, "random": true }, "size": { "value": 4, "random": true }, "move": { "enable": true, "speed": 1.2, "direction": "none", "out_mode": "out" } }, "retina_detect": true
+        });
+    </script>
+</body>
+</html>
